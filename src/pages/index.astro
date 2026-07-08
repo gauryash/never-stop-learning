@@ -1,0 +1,78 @@
+---
+import Layout from "@/layouts/main.astro"
+import { Button } from "@/components/ui/button"
+import { BookOpenIcon, CodeIcon, BrainIcon, RocketIcon } from "lucide-react"
+---
+
+<Layout title="Never Stop Learning" description="A platform for lifelong learners">
+  <div class="flex min-h-svh flex-col">
+    <header class="border-b px-6 py-4">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between">
+        <div class="flex items-center gap-2">
+          <BookOpenIcon class="size-6" />
+          <span class="text-lg font-semibold">Never Stop Learning</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="/never-stop-learning/courses" class="text-sm text-muted-foreground hover:text-foreground">Courses</a>
+          <a href="/never-stop-learning/about" class="text-sm text-muted-foreground hover:text-foreground">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <section class="mx-auto max-w-5xl px-6 py-20 text-center">
+        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+          Never Stop Learning
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
+          Explore courses, sharpen your skills, and grow every day. Whether you're a beginner or a seasoned developer, there's always something new to discover.
+        </p>
+        <div class="mt-8 flex justify-center gap-4">
+          <Button client:load>
+            <a href="/never-stop-learning/courses">Browse Courses</a>
+          </Button>
+          <Button client:load variant="outline">
+            <a href="/never-stop-learning/about">Learn More</a>
+          </Button>
+        </div>
+      </section>
+
+      <section class="border-t bg-muted/50 px-6 py-16">
+        <div class="mx-auto max-w-5xl">
+          <h2 class="text-2xl font-semibold text-center mb-10">What You'll Learn</h2>
+          <div class="grid gap-6 sm:grid-cols-3">
+            <div class="rounded-lg border bg-card p-6 text-card-foreground">
+              <CodeIcon class="mb-3 size-8 text-muted-foreground" />
+              <h3 class="font-medium">Web Development</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Modern frameworks, responsive design, and full-stack techniques.</p>
+            </div>
+            <div class="rounded-lg border bg-card p-6 text-card-foreground">
+              <BrainIcon class="mb-3 size-8 text-muted-foreground" />
+              <h3 class="font-medium">Computer Science</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Algorithms, data structures, and system design fundamentals.</p>
+            </div>
+            <div class="rounded-lg border bg-card p-6 text-card-foreground">
+              <RocketIcon class="mb-3 size-8 text-muted-foreground" />
+              <h3 class="font-medium">Career Growth</h3>
+              <p class="mt-2 text-sm text-muted-foreground">Soft skills, interview prep, and professional development.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="px-6 py-16">
+        <div class="mx-auto max-w-5xl text-center">
+          <h2 class="text-2xl font-semibold mb-4">Ready to Start?</h2>
+          <p class="text-muted-foreground mb-6">Join thousands of learners building their skills every day.</p>
+          <Button client:load>
+            <a href="/never-stop-learning/courses">Get Started</a>
+          </Button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t px-6 py-6 text-center text-sm text-muted-foreground">
+      Never Stop Learning &copy; {new Date().getFullYear()}
+    </footer>
+  </div>
+</Layout>
