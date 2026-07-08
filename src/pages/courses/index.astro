@@ -1,77 +1,69 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { Button } from "@/components/ui/button"
-import { BookOpenIcon, CodeIcon, BrainIcon, RocketIcon, DatabaseIcon, ShieldIcon } from "lucide-react"
+import { DashboardLayout } from "@/components/dashboard-layout"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { CodeIcon, BrainIcon, RocketIcon, DatabaseIcon, ShieldIcon } from "lucide-react"
 ---
 
-<Layout title="Courses | Never Stop Learning" description="Browse our available courses">
-  <div class="flex min-h-svh flex-col">
-    <header class="border-b px-6 py-4">
-      <nav class="mx-auto flex max-w-5xl items-center justify-between">
-        <a href="/never-stop-learning" class="flex items-center gap-2">
-          <BookOpenIcon class="size-6" />
-          <span class="text-lg font-semibold">Never Stop Learning</span>
-        </a>
-        <div class="flex items-center gap-4">
-          <a href="/never-stop-learning/courses" class="text-sm font-medium text-foreground">Courses</a>
-          <a href="/never-stop-learning/about" class="text-sm text-muted-foreground hover:text-foreground">About</a>
-        </div>
-      </nav>
-    </header>
-
-    <main class="flex-1 px-6 py-12">
-      <div class="mx-auto max-w-5xl">
-        <h1 class="text-3xl font-bold tracking-tight">All Courses</h1>
-        <p class="mt-2 text-muted-foreground">Pick a topic and start learning today.</p>
-
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <a href="/never-stop-learning/courses/javascript-fundamentals" class="group rounded-lg border bg-card p-6 text-card-foreground transition-colors hover:bg-accent">
-            <CodeIcon class="mb-3 size-8 text-muted-foreground" />
-            <h3 class="font-medium group-hover:underline">JavaScript Fundamentals</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Master variables, functions, closures, and async/await patterns.</p>
-            <span class="mt-3 inline-block text-xs text-muted-foreground">8 lessons &middot; Beginner</span>
-          </a>
-
-          <a href="/never-stop-learning/courses/react-deep-dive" class="group rounded-lg border bg-card p-6 text-card-foreground transition-colors hover:bg-accent">
-            <RocketIcon class="mb-3 size-8 text-muted-foreground" />
-            <h3 class="font-medium group-hover:underline">React Deep Dive</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Hooks, state management, performance optimization, and patterns.</p>
-            <span class="mt-3 inline-block text-xs text-muted-foreground">12 lessons &middot; Intermediate</span>
-          </a>
-
-          <a href="/never-stop-learning/courses/system-design" class="group rounded-lg border bg-card p-6 text-card-foreground transition-colors hover:bg-accent">
-            <BrainIcon class="mb-3 size-8 text-muted-foreground" />
-            <h3 class="font-medium group-hover:underline">System Design</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Scalability, load balancers, databases, and real-world architectures.</p>
-            <span class="mt-3 inline-block text-xs text-muted-foreground">10 lessons &middot; Advanced</span>
-          </a>
-
-          <a href="/never-stop-learning/courses/css-mastery" class="group rounded-lg border bg-card p-6 text-card-foreground transition-colors hover:bg-accent">
-            <DatabaseIcon class="mb-3 size-8 text-muted-foreground" />
-            <h3 class="font-medium group-hover:underline">CSS Mastery</h3>
-            <p class="mt-2 text-sm text-muted-foreground">Flexbox, Grid, animations, and responsive design techniques.</p>
-            <span class="mt-3 inline-block text-xs text-muted-foreground">6 lessons &middot; Beginner</span>
-          </a>
-
-          <a href="/never-stop-learning/courses/python-for-everyone" class="group rounded-lg border bg-card p-6 text-card-foreground transition-colors hover:bg-accent">
-            <CodeIcon class="mb-3 size-8 text-muted-foreground" />
-            <h3 class="font-medium group-hover:underline">Python for Everyone</h3>
-            <p class="mt-2 text-sm text-muted-foreground">From basics to automation, data processing, and scripting.</p>
-            <span class="mt-3 inline-block text-xs text-muted-foreground">10 lessons &middot; Beginner</span>
-          </a>
-
-          <a href="/never-stop-learning/courses/security-essentials" class="group rounded-lg border bg-card p-6 text-card-foreground transition-colors hover:bg-accent">
-            <ShieldIcon class="mb-3 size-8 text-muted-foreground" />
-            <h3 class="font-medium group-hover:underline">Security Essentials</h3>
-            <p class="mt-2 text-sm text-muted-foreground">OWASP top 10, authentication, encryption, and secure coding.</p>
-            <span class="mt-3 inline-block text-xs text-muted-foreground">8 lessons &middot; Intermediate</span>
-          </a>
-        </div>
-      </div>
-    </main>
-
-    <footer class="border-t px-6 py-6 text-center text-sm text-muted-foreground">
-      Never Stop Learning &copy; {new Date().getFullYear()}
-    </footer>
-  </div>
+<Layout title="Courses | Never Stop Learning">
+  <DashboardLayout client:load title="Courses">
+    <div className="mx-auto w-full max-w-3xl space-y-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>All Courses</CardTitle>
+          <CardDescription>Browse our available courses</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div class="flex items-center gap-3 rounded-lg border p-3">
+            <CodeIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">JavaScript Fundamentals</p>
+              <p className="text-xs text-muted-foreground">8 lessons &middot; Beginner</p>
+            </div>
+            <span className="text-xs text-muted-foreground">62% done</span>
+          </div>
+          <div class="flex items-center gap-3 rounded-lg border p-3">
+            <RocketIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">React Deep Dive</p>
+              <p className="text-xs text-muted-foreground">12 lessons &middot; Intermediate</p>
+            </div>
+            <span className="text-xs text-muted-foreground">25% done</span>
+          </div>
+          <div class="flex items-center gap-3 rounded-lg border p-3">
+            <BrainIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">System Design</p>
+              <p className="text-xs text-muted-foreground">10 lessons &middot; Advanced</p>
+            </div>
+            <span className="text-xs text-muted-foreground">10% done</span>
+          </div>
+          <div class="flex items-center gap-3 rounded-lg border p-3">
+            <DatabaseIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">CSS Mastery</p>
+              <p className="text-xs text-muted-foreground">6 lessons &middot; Beginner</p>
+            </div>
+            <span className="text-xs text-muted-foreground">Not started</span>
+          </div>
+          <div class="flex items-center gap-3 rounded-lg border p-3">
+            <CodeIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">Python for Everyone</p>
+              <p className="text-xs text-muted-foreground">10 lessons &middot; Beginner</p>
+            </div>
+            <span className="text-xs text-muted-foreground">Not started</span>
+          </div>
+          <div class="flex items-center gap-3 rounded-lg border p-3">
+            <ShieldIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">Security Essentials</p>
+              <p className="text-xs text-muted-foreground">8 lessons &middot; Intermediate</p>
+            </div>
+            <span className="text-xs text-muted-foreground">Not started</span>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </DashboardLayout>
 </Layout>

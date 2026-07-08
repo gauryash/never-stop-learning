@@ -1,78 +1,96 @@
 ---
 import Layout from "@/layouts/main.astro"
-import { Button } from "@/components/ui/button"
-import { BookOpenIcon, CodeIcon, BrainIcon, RocketIcon } from "lucide-react"
+import { DashboardLayout } from "@/components/dashboard-layout"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { BookOpenIcon, CodeIcon, BrainIcon, RocketIcon, TrendingUpIcon, UsersIcon } from "lucide-react"
 ---
 
-<Layout title="Never Stop Learning" description="A platform for lifelong learners">
-  <div class="flex min-h-svh flex-col">
-    <header class="border-b px-6 py-4">
-      <nav class="mx-auto flex max-w-5xl items-center justify-between">
-        <div class="flex items-center gap-2">
-          <BookOpenIcon class="size-6" />
-          <span class="text-lg font-semibold">Never Stop Learning</span>
-        </div>
-        <div class="flex items-center gap-4">
-          <a href="/never-stop-learning/courses" class="text-sm text-muted-foreground hover:text-foreground">Courses</a>
-          <a href="/never-stop-learning/about" class="text-sm text-muted-foreground hover:text-foreground">About</a>
-        </div>
-      </nav>
-    </header>
+<Layout title="Never Stop Learning">
+  <DashboardLayout client:load title="Home">
+    <div className="mx-auto w-full max-w-3xl space-y-4">
+      <div className="rounded-xl bg-muted/50 p-8 text-center">
+        <h1 className="text-2xl font-bold">Welcome back!</h1>
+        <p className="mt-2 text-muted-foreground">You've completed 12 lessons this week. Keep going!</p>
+      </div>
 
-    <main class="flex-1">
-      <section class="mx-auto max-w-5xl px-6 py-20 text-center">
-        <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-          Never Stop Learning
-        </h1>
-        <p class="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          Explore courses, sharpen your skills, and grow every day. Whether you're a beginner or a seasoned developer, there's always something new to discover.
-        </p>
-        <div class="mt-8 flex justify-center gap-4">
-          <Button client:load>
-            <a href="/never-stop-learning/courses">Browse Courses</a>
-          </Button>
-          <Button client:load variant="outline">
-            <a href="/never-stop-learning/about">Learn More</a>
-          </Button>
-        </div>
-      </section>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Courses In Progress</CardTitle>
+            <BookOpenIcon className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">3</div>
+            <p className="text-xs text-muted-foreground">+1 from last week</p>
+          </CardContent>
+        </Card>
 
-      <section class="border-t bg-muted/50 px-6 py-16">
-        <div class="mx-auto max-w-5xl">
-          <h2 class="text-2xl font-semibold text-center mb-10">What You'll Learn</h2>
-          <div class="grid gap-6 sm:grid-cols-3">
-            <div class="rounded-lg border bg-card p-6 text-card-foreground">
-              <CodeIcon class="mb-3 size-8 text-muted-foreground" />
-              <h3 class="font-medium">Web Development</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Modern frameworks, responsive design, and full-stack techniques.</p>
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Hours Learned</CardTitle>
+            <TrendingUpIcon className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">24.5</div>
+            <p className="text-xs text-muted-foreground">+2.5 from last week</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Lessons Completed</CardTitle>
+            <CodeIcon className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">47</div>
+            <p className="text-xs text-muted-foreground">+12 from last week</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Community Rank</CardTitle>
+            <UsersIcon className="size-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">#128</div>
+            <p className="text-xs text-muted-foreground">+32 from last month</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Continue Learning</CardTitle>
+          <CardDescription>Pick up where you left off</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex items-center gap-3 rounded-lg border p-3">
+            <CodeIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">JavaScript Fundamentals</p>
+              <p className="text-xs text-muted-foreground">Lesson 5 of 8 - Async JavaScript</p>
             </div>
-            <div class="rounded-lg border bg-card p-6 text-card-foreground">
-              <BrainIcon class="mb-3 size-8 text-muted-foreground" />
-              <h3 class="font-medium">Computer Science</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Algorithms, data structures, and system design fundamentals.</p>
-            </div>
-            <div class="rounded-lg border bg-card p-6 text-card-foreground">
-              <RocketIcon class="mb-3 size-8 text-muted-foreground" />
-              <h3 class="font-medium">Career Growth</h3>
-              <p class="mt-2 text-sm text-muted-foreground">Soft skills, interview prep, and professional development.</p>
-            </div>
+            <span className="text-xs text-muted-foreground">62%</span>
           </div>
-        </div>
-      </section>
-
-      <section class="px-6 py-16">
-        <div class="mx-auto max-w-5xl text-center">
-          <h2 class="text-2xl font-semibold mb-4">Ready to Start?</h2>
-          <p class="text-muted-foreground mb-6">Join thousands of learners building their skills every day.</p>
-          <Button client:load>
-            <a href="/never-stop-learning/courses">Get Started</a>
-          </Button>
-        </div>
-      </section>
-    </main>
-
-    <footer class="border-t px-6 py-6 text-center text-sm text-muted-foreground">
-      Never Stop Learning &copy; {new Date().getFullYear()}
-    </footer>
-  </div>
+          <div className="flex items-center gap-3 rounded-lg border p-3">
+            <RocketIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">React Deep Dive</p>
+              <p className="text-xs text-muted-foreground">Lesson 3 of 12 - Custom Hooks</p>
+            </div>
+            <span className="text-xs text-muted-foreground">25%</span>
+          </div>
+          <div className="flex items-center gap-3 rounded-lg border p-3">
+            <BrainIcon className="size-5 text-muted-foreground" />
+            <div className="flex-1">
+              <p className="text-sm font-medium">System Design</p>
+              <p className="text-xs text-muted-foreground">Lesson 1 of 10 - Intro to System Design</p>
+            </div>
+            <span className="text-xs text-muted-foreground">10%</span>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </DashboardLayout>
 </Layout>
