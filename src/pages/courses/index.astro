@@ -1,8 +1,6 @@
 ---
 import Layout from "@/layouts/main.astro"
 import { DashboardLayout } from "@/components/dashboard-layout"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CodeIcon, BrainIcon, RocketIcon, DatabaseIcon, ShieldIcon, BookOpenIcon } from "lucide-react"
 import { getCollection } from "astro:content"
 
 const learningModules = await getCollection("learning")
@@ -10,81 +8,58 @@ const learningModules = await getCollection("learning")
 
 <Layout title="Courses | Never Stop Learning">
   <DashboardLayout client:load title="Courses">
-    <div className="mx-auto w-full max-w-3xl space-y-4">
-      <Card>
-        <CardHeader>
-          <CardTitle>Learning Modules</CardTitle>
-          <CardDescription>Notes from topics I'm exploring</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {learningModules.map((module) => (
-            <a href={`/never-stop-learning/learning/${module.id}`} class="flex items-center gap-3 rounded-lg border p-3 hover:bg-accent transition-colors">
-              <BookOpenIcon className="size-5 text-muted-foreground" />
-              <div className="flex-1">
-                <p className="text-sm font-medium">{module.data.title}</p>
-                <p className="text-xs text-muted-foreground">{module.data.description}</p>
-              </div>
-            </a>
-          ))}
-        </CardContent>
-      </Card>
+    <div className="mx-auto w-full max-w-3xl">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold tracking-tight">All Content</h1>
+        <p className="mt-2 text-muted-foreground">Everything I'm learning and taking notes on.</p>
+      </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Courses</CardTitle>
-          <CardDescription>Structured learning paths</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div class="flex items-center gap-3 rounded-lg border p-3">
-            <CodeIcon className="size-5 text-muted-foreground" />
-            <div className="flex-1">
-              <p className="text-sm font-medium">JavaScript Fundamentals</p>
-              <p className="text-xs text-muted-foreground">8 lessons &middot; Beginner</p>
-            </div>
-            <span className="text-xs text-muted-foreground">62% done</span>
+      <div className="space-y-6">
+        <div>
+          <h2 className="text-sm font-medium text-muted-foreground mb-2">Learning Modules</h2>
+          <div className="space-y-1">
+            {learningModules.map((module) => (
+              <a
+                href={`/never-stop-learning/learning/${module.id}`}
+                className="group flex items-center justify-between rounded-lg px-3 py-2 -mx-3 hover:bg-accent transition-colors"
+              >
+                <span className="text-sm group-hover:text-accent-foreground">{module.data.title}</span>
+                <span className="text-muted-foreground text-xs group-hover:text-accent-foreground">→</span>
+              </a>
+            ))}
           </div>
-          <div class="flex items-center gap-3 rounded-lg border p-3">
-            <RocketIcon className="size-5 text-muted-foreground" />
-            <div className="flex-1">
-              <p className="text-sm font-medium">React Deep Dive</p>
-              <p className="text-xs text-muted-foreground">12 lessons &middot; Intermediate</p>
-            </div>
-            <span className="text-xs text-muted-foreground">25% done</span>
+        </div>
+
+        <div>
+          <h2 className="text-sm font-medium text-muted-foreground mb-2">Courses</h2>
+          <div className="space-y-1">
+            <a href="/never-stop-learning/courses/javascript-fundamentals" className="group flex items-center justify-between rounded-lg px-3 py-2 -mx-3 hover:bg-accent transition-colors">
+              <span className="text-sm group-hover:text-accent-foreground">JavaScript Fundamentals</span>
+              <span className="text-muted-foreground text-xs group-hover:text-accent-foreground">→</span>
+            </a>
+            <a href="/never-stop-learning/courses/react-deep-dive" className="group flex items-center justify-between rounded-lg px-3 py-2 -mx-3 hover:bg-accent transition-colors">
+              <span className="text-sm group-hover:text-accent-foreground">React Deep Dive</span>
+              <span className="text-muted-foreground text-xs group-hover:text-accent-foreground">→</span>
+            </a>
+            <a href="/never-stop-learning/courses/system-design" className="group flex items-center justify-between rounded-lg px-3 py-2 -mx-3 hover:bg-accent transition-colors">
+              <span className="text-sm group-hover:text-accent-foreground">System Design</span>
+              <span className="text-muted-foreground text-xs group-hover:text-accent-foreground">→</span>
+            </a>
+            <a href="/never-stop-learning/courses/css-mastery" className="group flex items-center justify-between rounded-lg px-3 py-2 -mx-3 hover:bg-accent transition-colors">
+              <span className="text-sm group-hover:text-accent-foreground">CSS Mastery</span>
+              <span className="text-muted-foreground text-xs group-hover:text-accent-foreground">→</span>
+            </a>
+            <a href="/never-stop-learning/courses/python-for-everyone" className="group flex items-center justify-between rounded-lg px-3 py-2 -mx-3 hover:bg-accent transition-colors">
+              <span className="text-sm group-hover:text-accent-foreground">Python for Everyone</span>
+              <span className="text-muted-foreground text-xs group-hover:text-accent-foreground">→</span>
+            </a>
+            <a href="/never-stop-learning/courses/security-essentials" className="group flex items-center justify-between rounded-lg px-3 py-2 -mx-3 hover:bg-accent transition-colors">
+              <span className="text-sm group-hover:text-accent-foreground">Security Essentials</span>
+              <span className="text-muted-foreground text-xs group-hover:text-accent-foreground">→</span>
+            </a>
           </div>
-          <div class="flex items-center gap-3 rounded-lg border p-3">
-            <BrainIcon className="size-5 text-muted-foreground" />
-            <div className="flex-1">
-              <p className="text-sm font-medium">System Design</p>
-              <p className="text-xs text-muted-foreground">10 lessons &middot; Advanced</p>
-            </div>
-            <span className="text-xs text-muted-foreground">10% done</span>
-          </div>
-          <div class="flex items-center gap-3 rounded-lg border p-3">
-            <DatabaseIcon className="size-5 text-muted-foreground" />
-            <div className="flex-1">
-              <p className="text-sm font-medium">CSS Mastery</p>
-              <p className="text-xs text-muted-foreground">6 lessons &middot; Beginner</p>
-            </div>
-            <span className="text-xs text-muted-foreground">Not started</span>
-          </div>
-          <div class="flex items-center gap-3 rounded-lg border p-3">
-            <CodeIcon className="size-5 text-muted-foreground" />
-            <div className="flex-1">
-              <p className="text-sm font-medium">Python for Everyone</p>
-              <p className="text-xs text-muted-foreground">10 lessons &middot; Beginner</p>
-            </div>
-            <span className="text-xs text-muted-foreground">Not started</span>
-          </div>
-          <div class="flex items-center gap-3 rounded-lg border p-3">
-            <ShieldIcon className="size-5 text-muted-foreground" />
-            <div className="flex-1">
-              <p className="text-sm font-medium">Security Essentials</p>
-              <p className="text-xs text-muted-foreground">8 lessons &middot; Intermediate</p>
-            </div>
-            <span className="text-xs text-muted-foreground">Not started</span>
-          </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   </DashboardLayout>
 </Layout>

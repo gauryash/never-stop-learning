@@ -1,38 +1,23 @@
 ---
 import Layout from "@/layouts/main.astro"
 import { DashboardLayout } from "@/components/dashboard-layout"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 ---
 
 <Layout title="About | Never Stop Learning">
   <DashboardLayout client:load title="About">
-    <div className="mx-auto w-full max-w-3xl space-y-4">
-      <Card>
-        <CardHeader>
-          <CardTitle>About Never Stop Learning</CardTitle>
-          <CardDescription>A free, open-source educational platform for developers</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            Never Stop Learning provides clear, well-structured courses on topics that matter. Whether you're picking up your first programming language or preparing for a system design interview, this platform gives you practical knowledge without the noise.
-          </p>
-          <div className="space-y-2">
-            <p className="text-sm font-medium">What Makes This Different</p>
-            <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-              <li>No paywalls. All content is free and open.</li>
-              <li>Content is concise and to the point.</li>
-              <li>Courses are organized by difficulty level.</li>
-              <li>Built with modern web technologies.</li>
-            </ul>
-          </div>
-          <div className="space-y-2">
-            <p className="text-sm font-medium">Tech Stack</p>
-            <p className="text-sm text-muted-foreground">
-              Astro, React, TypeScript, Tailwind CSS, and shadcn/ui. Hosted on GitHub Pages.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
+    <div className="mx-auto w-full max-w-3xl">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold tracking-tight">About</h1>
+      </div>
+
+      <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+        <p>
+          This is my personal space for learning new things and keeping notes. I write down what I learn as I go through courses, tutorials, and projects.
+        </p>
+        <p>
+          Built with Astro, React, Tailwind, and shadcn/ui. Notes are written in Markdown.
+        </p>
+      </div>
     </div>
   </DashboardLayout>
 </Layout>
