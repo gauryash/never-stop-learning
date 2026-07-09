@@ -1,0 +1,33 @@
+---
+import Layout from "@/layouts/main.astro"
+import { DashboardLayout } from "@/components/dashboard-layout"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { getCollection, render } from "astro:content"
+
+export async function getStaticPaths() {
+  const learning = await getCollection("learning")
+  return learning.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }))
+}
+
+const { entry } = Astro.props
+const { Content } = await render(entry)
+---
+
+<Layout title={`${entry.data.title} | Never Stop Learning`}>
+  <DashboardLayout client:load title={entry.data.title}>
+    <div className="mx-auto w-full max-w-3xl space-y-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>{entry.data.title}</CardTitle>
+          <CardDescription>{entry.data.description}</CardDescription>
+        </CardHeader>
+        <CardContent class="prose prose-neutral dark:prose-invert max-w-none">
+          <Content />
+        </CardContent>
+      </Card>
+    </div>
+  </DashboardLayout>
+</Layout>
