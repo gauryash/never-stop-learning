@@ -106,27 +106,27 @@ const data = {
     {
       name: "Learning FPGAs",
       url: "/never-stop-learning/learning/learning-fpgas",
-      emoji: "⚡",
+      emoji: "FPGA",
     },
     {
       name: "Learning Rust",
       url: "/never-stop-learning/learning/learning-rust",
-      emoji: "🦀",
+      emoji: "Rust",
     },
     {
       name: "Learning Docker",
       url: "/never-stop-learning/learning/learning-docker",
-      emoji: "🐳",
+      emoji: "Docker",
     },
     {
       name: "Learning TypeScript",
       url: "/never-stop-learning/learning/learning-typescript",
-      emoji: "📘",
+      emoji: "TS",
     },
     {
       name: "Learning Kubernetes",
       url: "/never-stop-learning/learning/learning-kubernetes",
-      emoji: "☸️",
+      emoji: "K8s",
     },
   ],
   workspaces: [
