@@ -1,36 +1,41 @@
-# Astro + React + TypeScript + shadcn/ui
+# Never Stop Learning
 
-This is a template for a new Astro project with React, TypeScript, and shadcn/ui.
+My personal space for learning new things and taking notes.
 
-## Adding components
+## What's here
 
-To add components to your app, run the following command:
+- Courses on topics I'm exploring
+- Learning modules with notes (markdown files in `src/content/learning/`)
+- Simple sidebar UI to navigate between topics
 
-```bash
-npx shadcn@latest add button
+## Tech
+
+- Astro + React + TypeScript
+- Tailwind CSS + shadcn/ui
+- Markdown content via Astro collections
+
+## Adding notes
+
+Create a new `.md` file in `src/content/learning/`:
+
+```markdown
+---
+title: Learning Something New
+description: What I learned
+icon: "📝"
+---
+
+## Notes here
+
+- Point 1
+- Point 2
 ```
 
-This will place the ui components in the `src/components` directory.
+Then add it to the sidebar in `src/components/app-sidebar.tsx` under `favorites`.
 
-## Using components
+## Run locally
 
-To use the components in your app, import them in an `.astro` file:
-
-```astro
----
-import { Button } from "@/components/ui/button"
----
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Astro App</title>
-  </head>
-  <body>
-    <div class="grid h-screen place-items-center content-center">
-      <Button>Button</Button>
-    </div>
-  </body>
-</html>
+```bash
+npm install
+npm run dev
 ```
