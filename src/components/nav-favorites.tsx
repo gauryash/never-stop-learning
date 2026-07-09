@@ -25,18 +25,20 @@ export function NavFavorites({
   favorites: {
     name: string
     url: string
-    emoji: string
+    icon?: React.ReactNode
   }[]
 }) {
   const { isMobile } = useSidebar()
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Favorites</SidebarGroupLabel>
+      <SidebarGroupLabel>Courses</SidebarGroupLabel>
       <SidebarMenu>
         {favorites.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton render={<a href={item.url} title={item.name} />}>
-              <span>{item.emoji}</span>
+              {item.icon ? (
+                <span className="flex items-center justify-center w-4 h-4">{item.icon}</span>
+              ) : null}
               <span>{item.name}</span>
             </SidebarMenuButton>
             <DropdownMenu>
