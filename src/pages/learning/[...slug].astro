@@ -3,6 +3,7 @@ import Layout from "@/layouts/main.astro"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { getCollection, render } from "astro:content"
+import Prose from "@/components/prose.astro"
 
 export async function getStaticPaths() {
   const learning = await getCollection("learning")
@@ -24,8 +25,10 @@ const { Content } = await render(entry)
           <CardTitle>{entry.data.title}</CardTitle>
           <CardDescription>{entry.data.description}</CardDescription>
         </CardHeader>
-        <CardContent class="prose prose-neutral dark:prose-invert max-w-none">
-          <Content />
+        <CardContent>
+          <Prose>
+            <Content />
+          </Prose>
         </CardContent>
       </Card>
     </div>

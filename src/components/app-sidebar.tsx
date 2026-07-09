@@ -3,8 +3,6 @@
 import * as React from "react"
 import {
   BookOpen,
-  Terminal,
-  AudioLines,
   Search,
   Sparkles,
   Home,
@@ -34,16 +32,6 @@ const data = {
       name: "Never Stop Learning",
       logo: <BookOpen />,
       plan: "Free",
-    },
-    {
-      name: "Acme Inc",
-      logo: <Terminal />,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: <AudioLines />,
-      plan: "Startup",
     },
   ],
   navMain: [
