@@ -92,78 +92,20 @@ const data = {
   ],
   favorites: [
     {
-      name: "JavaScript Fundamentals",
-      url: "/never-stop-learning/courses/javascript-fundamentals",
-      icon: <img src="/never-stop-learning/icons/vscode.svg" alt="" className="w-4 h-4" />,
-    },
-    {
-      name: "React Deep Dive",
-      url: "/never-stop-learning/courses/react-deep-dive",
-      icon: <img src="/never-stop-learning/icons/react.svg" alt="" className="w-4 h-4" />,
-    },
-    {
-      name: "System Design",
-      url: "/never-stop-learning/courses/system-design",
-      icon: <img src="/never-stop-learning/icons/architecture.svg" alt="" className="w-4 h-4" />,
-    },
-    {
-      name: "CSS Mastery",
-      url: "/never-stop-learning/courses/css-mastery",
-      icon: <img src="/never-stop-learning/icons/figma.svg" alt="" className="w-4 h-4" />,
-    },
-    {
-      name: "Python for Everyone",
-      url: "/never-stop-learning/courses/python-for-everyone",
-      icon: <img src="/never-stop-learning/icons/obsidian.svg" alt="" className="w-4 h-4" />,
-    },
-    {
-      name: "Security Essentials",
-      url: "/never-stop-learning/courses/security-essentials",
-      icon: <img src="/never-stop-learning/icons/shield.svg" alt="" className="w-4 h-4" />,
+      name: "Learning FPGAs",
+      url: "/never-stop-learning/learning/learning-fpgas",
     },
   ],
   workspaces: [
     {
       name: "Learning Tracks",
       emoji: "📚",
-      pages: [
-        {
-          name: "Web Development",
-          url: "/never-stop-learning/courses",
-          emoji: "🌐",
-        },
-        {
-          name: "Systems Programming",
-          url: "/never-stop-learning/courses",
-          emoji: "⚙️",
-        },
-        {
-          name: "DevOps & Infrastructure",
-          url: "/never-stop-learning/courses",
-          emoji: "🔧",
-        },
-      ],
+      pages: [],
     },
     {
       name: "Projects",
       emoji: "🚀",
-      pages: [
-        {
-          name: "Portfolio Website",
-          url: "#",
-          emoji: "💼",
-        },
-        {
-          name: "CLI Tool",
-          url: "#",
-          emoji: "🛠️",
-        },
-        {
-          name: "Open Source Contributions",
-          url: "#",
-          emoji: "🌟",
-        },
-      ],
+      pages: [],
     },
   ],
 }
