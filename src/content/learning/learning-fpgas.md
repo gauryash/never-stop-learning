@@ -1,7 +1,7 @@
 ---
 title: Learning FPGAs
-description: Introduction to FPGA development with Verilog and VHDL
-group: FPGA Development
+description: Introduction to FPGA with Verilog and VHDL
+group: FPGA
 icon: "⚡"
 ---
 
