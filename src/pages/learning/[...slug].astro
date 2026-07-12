@@ -4,6 +4,7 @@ import { DashboardLayout } from "@/components/dashboard-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { getCollection, render } from "astro:content"
 import Prose from "@/components/prose.astro"
+import { getNotesGroups } from "@/lib/notes"
 
 export async function getStaticPaths() {
   const learning = await getCollection("learning")
@@ -15,15 +16,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props
 const { Content } = await render(entry)
-
-const allModules = await getCollection("learning")
-const groupMap = new Map<string, { name: string; url: string }[]>()
-for (const m of allModules) {
-  const group = m.data.group ?? "General"
-  if (!groupMap.has(group)) groupMap.set(group, [])
-  groupMap.get(group)!.push({ name: m.data.title, url: `/never-stop-learning/learning/${m.id}` })
-}
-const notes = [...groupMap.entries()].map(([name, modules]) => ({ name, modules }))
+const notes = await getNotesGroups()
 ---
 
 <Layout title={`${entry.data.title} | Never Stop Learning`}>

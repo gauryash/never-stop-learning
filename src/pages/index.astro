@@ -2,16 +2,10 @@
 import Layout from "@/layouts/main.astro"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { getCollection } from "astro:content"
+import { getNotesGroups } from "@/lib/notes"
 
 const learningModules = await getCollection("learning")
-
-const groupMap = new Map<string, { name: string; url: string }[]>()
-for (const m of learningModules) {
-  const group = m.data.group ?? "General"
-  if (!groupMap.has(group)) groupMap.set(group, [])
-  groupMap.get(group)!.push({ name: m.data.title, url: `/never-stop-learning/learning/${m.id}` })
-}
-const notes = [...groupMap.entries()].map(([name, modules]) => ({ name, modules }))
+const notes = await getNotesGroups()
 ---
 
 <Layout title="Never Stop Learning">

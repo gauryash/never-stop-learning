@@ -14,13 +14,10 @@ import {
 } from "@/components/ui/sidebar"
 
 const data = {
-  teams: [
-    {
-      name: "Never Stop Learning",
-      logo: <BookOpen />,
-      plan: "Free",
-    },
-  ],
+  team: {
+    name: "Never Stop Learning",
+    logo: <BookOpen />,
+  },
   navMain: [
     {
       title: "Home",
@@ -45,7 +42,7 @@ export function AppSidebar({
   return (
     <Sidebar className="border-r-0" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher team={data.team} />
         <NavMain items={data.navMain} />
       </SidebarHeader>
       <SidebarContent>

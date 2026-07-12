@@ -1,7 +1,7 @@
 ---
 title: Finite State Machines
 description: Understanding FSMs for hardware design
-group: FPGA Development
+group: FPGA
 icon: "🔁"
 ---
 

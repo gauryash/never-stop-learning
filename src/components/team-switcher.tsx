@@ -9,15 +9,13 @@ import {
 } from "@/components/ui/sidebar"
 
 export function TeamSwitcher({
-  teams,
+  team,
 }: {
-  teams: {
+  team: {
     name: string
     logo: React.ReactNode
-    plan: string
-  }[]
+  }
 }) {
-  const team = teams[0]
   return (
     <SidebarMenu>
       <SidebarMenuItem>
