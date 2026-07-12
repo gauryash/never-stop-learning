@@ -7,6 +7,7 @@ const learning = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    course: z.string().optional(),
     icon: z.string().optional(),
   }),
 })

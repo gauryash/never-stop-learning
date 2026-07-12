@@ -17,14 +17,17 @@ const { entry } = Astro.props
 const { Content } = await render(entry)
 
 const allModules = await getCollection("learning")
-const favorites = allModules.map((m) => ({
-  name: m.data.title,
-  url: `/never-stop-learning/learning/${m.id}`,
-}))
+const courseMap = new Map<string, { name: string; url: string }[]>()
+for (const m of allModules) {
+  const course = m.data.course ?? "Other"
+  if (!courseMap.has(course)) courseMap.set(course, [])
+  courseMap.get(course)!.push({ name: m.data.title, url: `/never-stop-learning/learning/${m.id}` })
+}
+const courses = [...courseMap.entries()].map(([name, modules]) => ({ name, modules }))
 ---
 
 <Layout title={`${entry.data.title} | Never Stop Learning`}>
-  <DashboardLayout client:load title={entry.data.title} favorites={favorites}>
+  <DashboardLayout client:load title={entry.data.title} courses={courses}>
     <div className="mx-auto w-full max-w-3xl space-y-4">
       <Card>
         <CardHeader>

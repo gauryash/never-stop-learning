@@ -17,16 +17,16 @@ import {
 
 export function DashboardLayout({
   title,
-  favorites,
+  courses,
   children,
 }: {
   title: string
-  favorites?: { name: string; url: string; icon?: React.ReactNode }[]
+  courses?: { name: string; modules: { name: string; url: string }[] }[]
   children: React.ReactNode
 }) {
   return (
     <SidebarProvider>
-      <AppSidebar favorites={favorites} />
+      <AppSidebar courses={courses} />
       <SidebarInset>
         <header className="flex h-14 shrink-0 items-center gap-2">
           <div className="flex flex-1 items-center gap-2 px-3">

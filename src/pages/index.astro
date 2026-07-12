@@ -5,14 +5,17 @@ import { getCollection } from "astro:content"
 
 const learningModules = await getCollection("learning")
 
-const favorites = learningModules.map((m) => ({
-  name: m.data.title,
-  url: `/never-stop-learning/learning/${m.id}`,
-}))
+const courseMap = new Map<string, { name: string; url: string }[]>()
+for (const m of learningModules) {
+  const course = m.data.course ?? "Other"
+  if (!courseMap.has(course)) courseMap.set(course, [])
+  courseMap.get(course)!.push({ name: m.data.title, url: `/never-stop-learning/learning/${m.id}` })
+}
+const courses = [...courseMap.entries()].map(([name, modules]) => ({ name, modules }))
 ---
 
 <Layout title="Never Stop Learning">
-  <DashboardLayout client:load title="Home" favorites={favorites}>
+  <DashboardLayout client:load title="Home" courses={courses}>
     <div className="mx-auto w-full max-w-3xl">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Never Stop Learning</h1>
