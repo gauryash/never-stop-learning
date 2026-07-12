@@ -3,7 +3,7 @@
 import * as React from "react"
 import { BookOpen, Home } from "lucide-react"
 
-import { NavCourses } from "@/components/nav-courses"
+import { NavNotes } from "@/components/nav-notes"
 import { NavMain } from "@/components/nav-main"
 import { TeamSwitcher } from "@/components/team-switcher"
 import {
@@ -34,19 +34,13 @@ const data = {
       icon: <BookOpen />,
     },
   ],
-  favorites: [
-    {
-      name: "Learning FPGAs",
-      url: "/never-stop-learning/learning/learning-fpgas",
-    },
-  ],
 }
 
 export function AppSidebar({
-  courses,
+  notes,
   ...props
 }: React.ComponentProps<typeof Sidebar> & {
-  courses?: { name: string; modules: { name: string; url: string }[] }[]
+  notes?: { name: string; modules: { name: string; url: string }[] }[]
 }) {
   return (
     <Sidebar className="border-r-0" {...props}>
@@ -55,7 +49,7 @@ export function AppSidebar({
         <NavMain items={data.navMain} />
       </SidebarHeader>
       <SidebarContent>
-        <NavCourses courses={courses} />
+        <NavNotes notes={notes} />
       </SidebarContent>
       <SidebarRail />
     </Sidebar>

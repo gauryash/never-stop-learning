@@ -18,22 +18,22 @@ import {
 } from "@/components/ui/sidebar"
 import { ChevronRightIcon } from "lucide-react"
 
-export function NavCourses({
-  courses,
+export function NavNotes({
+  notes,
 }: {
-  courses?: { name: string; modules: { name: string; url: string }[] }[]
+  notes?: { name: string; modules: { name: string; url: string }[] }[]
 }) {
-  if (!courses?.length) return null
+  if (!notes?.length) return null
 
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Notes</SidebarGroupLabel>
       <SidebarMenu>
-        {courses.map((course) => (
-          <Collapsible key={course.name} defaultOpen>
+        {notes.map((group) => (
+          <Collapsible key={group.name} defaultOpen>
             <SidebarMenuItem>
               <SidebarMenuButton className="font-medium">
-                <span>{course.name}</span>
+                <span>{group.name}</span>
               </SidebarMenuButton>
               <SidebarMenuAction
                 render={<CollapsibleTrigger />}
@@ -43,7 +43,7 @@ export function NavCourses({
               </SidebarMenuAction>
               <CollapsibleContent>
                 <SidebarMenuSub>
-                  {course.modules.map((mod) => (
+                  {group.modules.map((mod) => (
                     <SidebarMenuSubItem key={mod.name}>
                       <SidebarMenuSubButton
                         render={<a href={mod.url} />}

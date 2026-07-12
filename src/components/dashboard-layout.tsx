@@ -17,16 +17,16 @@ import {
 
 export function DashboardLayout({
   title,
-  courses,
+  notes,
   children,
 }: {
   title: string
-  courses?: { name: string; modules: { name: string; url: string }[] }[]
+  notes?: { name: string; modules: { name: string; url: string }[] }[]
   children: React.ReactNode
 }) {
   return (
     <SidebarProvider>
-      <AppSidebar courses={courses} />
+      <AppSidebar notes={notes} />
       <SidebarInset>
         <header className="flex h-14 shrink-0 items-center gap-2">
           <div className="flex flex-1 items-center gap-2 px-3">

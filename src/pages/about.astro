@@ -4,17 +4,17 @@ import { DashboardLayout } from "@/components/dashboard-layout"
 import { getCollection } from "astro:content"
 
 const learningModules = await getCollection("learning")
-const courseMap = new Map<string, { name: string; url: string }[]>()
+const groupMap = new Map<string, { name: string; url: string }[]>()
 for (const m of learningModules) {
-  const course = m.data.course ?? "Other"
-  if (!courseMap.has(course)) courseMap.set(course, [])
-  courseMap.get(course)!.push({ name: m.data.title, url: `/never-stop-learning/learning/${m.id}` })
+  const group = m.data.group ?? "General"
+  if (!groupMap.has(group)) groupMap.set(group, [])
+  groupMap.get(group)!.push({ name: m.data.title, url: `/never-stop-learning/learning/${m.id}` })
 }
-const courses = [...courseMap.entries()].map(([name, modules]) => ({ name, modules }))
+const notes = [...groupMap.entries()].map(([name, modules]) => ({ name, modules }))
 ---
 
 <Layout title="About | Never Stop Learning">
-  <DashboardLayout client:load title="About" courses={courses}>
+  <DashboardLayout client:load title="About" notes={notes}>
     <div className="mx-auto w-full max-w-3xl">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">About</h1>
