@@ -14,8 +14,8 @@ for (const m of learningModules) {
 const courses = [...courseMap.entries()].map(([name, modules]) => ({ name, modules }))
 ---
 
-<Layout title="Courses | Never Stop Learning">
-  <DashboardLayout client:load title="Courses" courses={courses}>
+<Layout title="Notes | Never Stop Learning">
+  <DashboardLayout client:load title="Notes" courses={courses}>
     <div className="mx-auto w-full max-w-3xl">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">All Content</h1>

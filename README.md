@@ -4,7 +4,7 @@ My personal space for learning new things and taking notes.
 
 ## What's here
 
-- Courses on topics I'm exploring
+- Notes on topics I'm exploring
 - Learning modules with notes (markdown files in `src/content/learning/`)
 - Simple sidebar UI to navigate between topics
 
@@ -31,7 +31,7 @@ icon: "📝"
 - Point 2
 ```
 
-It will automatically appear in the sidebar Courses section.
+It will automatically appear in the sidebar Notes section.
 
 ## Run locally
 

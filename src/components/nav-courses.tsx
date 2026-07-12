@@ -27,7 +27,7 @@ export function NavCourses({
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Courses</SidebarGroupLabel>
+      <SidebarGroupLabel>Notes</SidebarGroupLabel>
       <SidebarMenu>
         {courses.map((course) => (
           <Collapsible key={course.name} defaultOpen>

@@ -29,8 +29,8 @@ const data = {
       isActive: true,
     },
     {
-      title: "Courses",
-      url: "/never-stop-learning/courses",
+      title: "Notes",
+      url: "/never-stop-learning/notes",
       icon: <BookOpen />,
     },
   ],
