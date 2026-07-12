@@ -18,6 +18,7 @@
   "dependencies": {
     "@astrojs/react": "^5",
     "@base-ui/react": "^1.6.0",
+    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -34,9 +35,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9",
-    "@eslint/js": "^10",
-    "@tailwindcss/typography": "^0.5.20",
-    "eslint": "^10",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.7.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17",
@@ -44,6 +44,6 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "~6",
-    "typescript-eslint": "^8"
+    "typescript-eslint": "^8.63.0"
   }
 }

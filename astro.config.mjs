@@ -18,6 +18,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     resolve: {
+      // @ts-expect-error Astro v6 type gap — tsconfigPaths is built-in
       tsconfigPaths: true,
     },
   },

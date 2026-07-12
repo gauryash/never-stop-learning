@@ -31,7 +31,7 @@ icon: "📝"
 - Point 2
 ```
 
-Then add it to the sidebar in `src/components/app-sidebar.tsx` under `favorites`.
+It will automatically appear in the sidebar Courses section.
 
 ## Run locally
 

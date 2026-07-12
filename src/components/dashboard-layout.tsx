@@ -17,14 +17,16 @@ import {
 
 export function DashboardLayout({
   title,
+  favorites,
   children,
 }: {
   title: string
+  favorites?: { name: string; url: string; icon?: React.ReactNode }[]
   children: React.ReactNode
 }) {
   return (
     <SidebarProvider>
-      <AppSidebar />
+      <AppSidebar favorites={favorites} />
       <SidebarInset>
         <header className="flex h-14 shrink-0 items-center gap-2">
           <div className="flex flex-1 items-center gap-2 px-3">

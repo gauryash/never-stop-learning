@@ -110,7 +110,13 @@ const data = {
   ],
 }
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({
+  favorites: externalFavorites,
+  ...props
+}: React.ComponentProps<typeof Sidebar> & {
+  favorites?: { name: string; url: string; icon?: React.ReactNode }[]
+}) {
+  const favorites = externalFavorites ?? data.favorites
   return (
     <Sidebar className="border-r-0" {...props}>
       <SidebarHeader>

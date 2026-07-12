@@ -4,10 +4,15 @@ import { DashboardLayout } from "@/components/dashboard-layout"
 import { getCollection } from "astro:content"
 
 const learningModules = await getCollection("learning")
+
+const favorites = learningModules.map((m) => ({
+  name: m.data.title,
+  url: `/never-stop-learning/learning/${m.id}`,
+}))
 ---
 
 <Layout title="Courses | Never Stop Learning">
-  <DashboardLayout client:load title="Courses">
+  <DashboardLayout client:load title="Courses" favorites={favorites}>
     <div className="mx-auto w-full max-w-3xl">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">All Content</h1>

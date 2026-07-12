@@ -15,10 +15,16 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props
 const { Content } = await render(entry)
+
+const allModules = await getCollection("learning")
+const favorites = allModules.map((m) => ({
+  name: m.data.title,
+  url: `/never-stop-learning/learning/${m.id}`,
+}))
 ---
 
 <Layout title={`${entry.data.title} | Never Stop Learning`}>
-  <DashboardLayout client:load title={entry.data.title}>
+  <DashboardLayout client:load title={entry.data.title} favorites={favorites}>
     <div className="mx-auto w-full max-w-3xl space-y-4">
       <Card>
         <CardHeader>
