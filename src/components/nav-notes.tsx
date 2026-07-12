@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/collapsible"
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuAction,
   SidebarMenuButton,
@@ -27,7 +26,6 @@ export function NavNotes({
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Notes</SidebarGroupLabel>
       <SidebarMenu>
         {notes.map((group) => (
           <Collapsible key={group.name} defaultOpen>
