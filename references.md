@@ -14,3 +14,5 @@
 
 - **FPGA & ASIC Roadmap**  
   https://github.com/m3y54m/FPGA-ASIC-Roadmap
+
+https://antonz.org/go-concurrency/goroutines/
