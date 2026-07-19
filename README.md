@@ -5,24 +5,24 @@ My personal space for learning new things and taking notes.
 ## What's here
 
 - Notes on topics I'm exploring
-- Learning modules with notes (markdown files in `src/content/learning/`)
-- Simple sidebar UI to navigate between topics
+- Learning modules with notes (MDX files in `content/docs/`)
+- Sidebar navigation via Fumadocs
 
 ## Tech
 
-- Astro + React + TypeScript
-- Tailwind CSS + shadcn/ui
-- Markdown content via Astro collections
+- Next.js 14 (App Router) + React 18 + TypeScript
+- Fumadocs (MDX loader, UI, search)
+- Tailwind CSS 3
+- Static export to GitHub Pages
 
 ## Adding notes
 
-Create a new `.md` file in `src/content/learning/`:
+Create a new `.mdx` file in `content/docs/`:
 
-```markdown
+```mdx
 ---
 title: Learning Something New
 description: What I learned
-icon: "📝"
 ---
 
 ## Notes here
@@ -31,7 +31,7 @@ icon: "📝"
 - Point 2
 ```
 
-It will automatically appear in the sidebar Notes section.
+Then update `content/docs/meta.json` to include the new page in the sidebar.
 
 ## Run locally
 
