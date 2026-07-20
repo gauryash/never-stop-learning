@@ -18,3 +18,29 @@
 https://antonz.org/go-concurrency/goroutines/
 
 https://arobenko.github.io/bare_metal_cpp/
+
+Want to learn Operating Systems? Start with these free books.
+
+1. Operating Systems: Three Easy Pieces (OSTEP)
+https://pages.cs.wisc.edu/~remzi/OSTEP/
+
+2. Modern Operating Systems (Lecture Resources)
+https://pages.cs.wisc.edu/~remzi/Classes/537/
+
+3. The Little Book About OS Development
+https://littleosbook.github.io
+
+4. Linux Kernel Labs
+https://linux-kernel-labs.github.io
+
+5. Redox OS Book (Rust)
+https://doc.redox-os.org/book/
+
+6. OSDev Wiki
+https://wiki.osdev.org
+
+7. Writing an OS in Rust
+https://os.phil-opp.com
+
+8. ToaruOS (Educational Unix-like OS)
+https://github.com/klange/toaruos
