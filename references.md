@@ -16,3 +16,5 @@
   https://github.com/m3y54m/FPGA-ASIC-Roadmap
 
 https://antonz.org/go-concurrency/goroutines/
+
+https://arobenko.github.io/bare_metal_cpp/
