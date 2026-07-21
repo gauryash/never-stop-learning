@@ -48,3 +48,17 @@ https://github.com/klange/toaruos
 Seven Questions About Tariffs That Everyone Should Know the Answer To
 -https://ocw.mit.edu/courses/res-14-004-seven-questions-about-tariffs-that-everyone-should-know-the-answer-to-january-iap-2026/pages/lecture-video-and-slides/
 -https://economics.mit.edu/sites/default/files/2025-11/CRC_CEPR_published.pdf
+
+Economic Applications of Game Theory
+https://ocw.mit.edu/courses/14-12-economic-applications-of-game-theory-fall-2025/pages/syllabus/
+
+Deep Learning
+https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/
+
+Hands-On Deep Learning
+https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/
+
+Foundation Models and Generative AI
+https://ocw.mit.edu/courses/6-s087-foundation-models-and-generative-ai-january-iap-2024/
+
+
