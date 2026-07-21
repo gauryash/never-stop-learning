@@ -44,3 +44,7 @@ https://os.phil-opp.com
 
 8. ToaruOS (Educational Unix-like OS)
 https://github.com/klange/toaruos
+
+Seven Questions About Tariffs That Everyone Should Know the Answer To
+-https://ocw.mit.edu/courses/res-14-004-seven-questions-about-tariffs-that-everyone-should-know-the-answer-to-january-iap-2026/pages/lecture-video-and-slides/
+-https://economics.mit.edu/sites/default/files/2025-11/CRC_CEPR_published.pdf
