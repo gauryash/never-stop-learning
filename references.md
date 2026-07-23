@@ -61,4 +61,6 @@ https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/
 Foundation Models and Generative AI
 https://ocw.mit.edu/courses/6-s087-foundation-models-and-generative-ai-january-iap-2024/
 
+https://www.plantation-productions.com/Webster/www.artofasm.com/Linux/HTML/AoATOC.html
+https://inria.hal.science/hal-02383654v2/file/modernC.pdf
 
